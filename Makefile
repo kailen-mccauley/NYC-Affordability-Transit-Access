@@ -53,7 +53,17 @@ create_environment:
 	
 	@echo ">>> conda env created. Activate with:\nconda activate $(PROJECT_NAME)"
 
+## Export current environment to environment.yml (run after installing new packages)
+.PHONY: env_update
+env_update:
+	@echo "📦 Exporting updated environment to environment.yml"
+	conda run -n $(PROJECT_NAME) conda env export --from-history | grep -v "prefix:" > environment.yml
 
+## Remove the environment completely
+.PHONY: env_clean
+env_clean:
+	@echo "🧹 Removing conda environment: $(ENV_NAME)"
+	conda env remove -n $(ENV_NAME)
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
