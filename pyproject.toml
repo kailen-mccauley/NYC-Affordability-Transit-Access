@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "nyc_affordability_and_transit_access"
+version = "0.0.1"
+description = "By layering property sales and MTA subway data over time, we will explore dynamic spatial trends showing how transit affects affordability."
+authors = [
+  { name = "Team 41" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "==3.11.14"
+
+
+[tool.ruff]
+line-length = 99
+src = ["nyc_affordability_and_transit_access"]
+include = ["pyproject.toml", "nyc_affordability_and_transit_access/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["nyc_affordability_and_transit_access"]
+force-sort-within-sections = true
+
