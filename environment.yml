@@ -1,28 +1,18 @@
 name: NYC-Affordability-Transit-Access
 channels:
-  - conda-forge
   - defaults
 dependencies:
-  - python=3.11
   - pip
-  - ipython
-  - jupyterlab
-  - notebook
-  - matplotlib
-  - numpy
-  - pandas
-  - scikit-learn
-
-  - pytest
-  - ruff
-
-  - openpyxl
   - requests
+  - ipython
+  - matplotlib
+  - pandas
+  - jupyterlab
+  - ruff
+  - notebook
+  - openpyxl
+  - scikit-learn
+  - python=3.11
+  - numpy
+  - pytest
 
-  # Pip-only dependencies
-  - pip:
-      - python-dotenv
-      - mkdocs
-      - cookiecutter
-      - beautifulsoup4
-      - -e .
