@@ -57,7 +57,7 @@ create_environment:
 .PHONY: env_update
 env_update:
 	@echo "📦 Exporting updated environment to environment.yml"
-	conda run -n $(PROJECT_NAME) conda env export --from-history | grep -v "prefix:" > environment.yml
+	conda run -n $(PROJECT_NAME) conda env export | grep -v "prefix:" > environment.yml
 
 ## Remove the environment completely
 .PHONY: env_clean
